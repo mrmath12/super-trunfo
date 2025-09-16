@@ -3,8 +3,7 @@
 int main(){
 
     //DECLARANDO VARIÁVEIS
-    // char estado1, estado2, cod1[20], cod2[20], cidade1[20], cidade2[20];
-    char estado1 = 'A', estado2 = 'B', cod1[20] = "A01", cod2[20] = "B02", cidade1[20] = "São", cidade2[20] = "Rio";
+    char estado1, estado2, cod1[20], cod2[20], cidade1[20], cidade2[20];
     int pontosTur1, pontosTur2;
     unsigned long int pop1, pop2;
     float area1, pib1, area2, pib2, densidade1, densidade2, pibPerCapita1, pibPerCapita2, super1, super2;
@@ -18,29 +17,25 @@ int main(){
     printf("----------------- PREENCHA COM OS DADOS DA CARTA 01 -----------------\n");
 
     printf("Digite a o NOME: ");
-    // scanf("%s", cidade1);
+    scanf("%s", cidade1);
 
     printf("Digite o ESTADO: ");
-    // scanf(" %c", &estado1);
+    scanf(" %c", &estado1);
 
     printf("Digite o CÓDIGO: ");
-    // scanf("%s", cod1);
+    scanf("%s", cod1);
 
     printf("Digite o POPULAÇÃO: ");
-    // scanf("%i", &pop1);
-    pop1 = 12325000;
+    scanf("%i", &pop1);
 
     printf("Digite o PIB: ");
-    // scanf("%f", &pib1);
-    pib1 = 699.28;
+    scanf("%f", &pib1);
 
     printf("Digite a QUANTIDADE de pontos turísticos: ");
-    // scanf("%i", &pontosTur1);
-    pontosTur1 = 50;
+    scanf("%i", &pontosTur1);
 
     printf("Digite a ÁREA: ");
-    // scanf("%f", &area1);
-    area1 = 1521.11;
+    scanf("%f", &area1);
 
     // CÁLCULO DE DENSIDADE E PIB PER CAPITA DA CARTA 01
     densidade1 = (float) pop1 / area1;
@@ -55,29 +50,25 @@ int main(){
     printf("----------------- PREENCHA COM OS DADOS DA CARTA 02 -----------------\n");
 
     printf("Digite o NOME: ");
-    // scanf("%s", cidade2);
+    scanf("%s", cidade2);
 
     printf("Digite o ESTADO: ");
-    // scanf(" %c", &estado2);
+    scanf(" %c", &estado2);
 
     printf("Digite o CÓDIGO: ");
-    // scanf("%s", cod2);
+    scanf("%s", cod2);
 
     printf("Digite o POPULAÇÃO: ");
-    // scanf("%i", &pop2);
-    pop2 = 6748000;
+    scanf("%i", &pop2);
 
     printf("Digite o PIB: ");
-    // scanf("%f", &pib2);
-    pib2 = 300.50;
+    scanf("%f", &pib2);
 
     printf("Digite a QUANTIDADE de pontos turísticos: ");
-    // scanf("%i", &pontosTur2);
-    pontosTur2 = 30;
+    scanf("%i", &pontosTur2);
 
     printf("Digite a ÁREA: ");
-    // scanf("%f", &area2);
-    area2 = 1200.25;
+    scanf("%f", &area2);
 
     // CÁLCULO DE DENSIDADE E PIB PER CAPITA DA CARTA 02
     densidade2 = (float) pop2 / area2;
