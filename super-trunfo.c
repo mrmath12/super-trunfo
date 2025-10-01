@@ -5,8 +5,8 @@ int main(){
     //DECLARANDO VARIÁVEIS
     char estado1 = 'A', estado2 = 'B', cod1[20] = "A01", cod2[20] = "B02", cidade1[20] = "São Paulo", cidade2[20] = "Rio de Janeiro";
     unsigned long int pop1, pop2;
-    float area1, pib1, area2, pib2, densidade1, densidade2, pibPerCapita1, pibPerCapita2, super1, super2;
-    int pontosTur1, pontosTur2, itemComparado;
+    float area1, pib1, area2, pib2, densidade1, densidade2, pibPerCapita1, pibPerCapita2, super1, super2, soma1, soma2;
+    int pontosTur1, pontosTur2, itemComparado1, itemComparado2;
     
     
     //BOAS VINDAS AO PROGRAMA
@@ -152,59 +152,154 @@ int main(){
     printf("4. Pontos Turísticos\n");
     printf("5. Densidade Populacional\n");
     printf("--------------------------------------------\n");
-    printf("Escolha qual item: ");
-    scanf("%d", &itemComparado);
+    printf("Escolha o primeiro item para comparação: ");
+    scanf("%d", &itemComparado1);
 
-    switch (itemComparado) {
+    switch (itemComparado1) {
         case 1:
+            soma1 = pop1;
+            soma2 = pop2;
             if (pop1 > pop2) {
-                printf("%s tem a população maior: %d x %d", cidade1, pop1, pop2);
+                printf("%s tem a população maior: %d x %d\n", cidade1, pop1, pop2);
             } else if (pop1 < pop2) {
-                printf("%s tem a população maior: %d x %d", cidade2, pop2, pop1);
+                printf("%s tem a população maior: %d x %d\n", cidade2, pop2, pop1);
             } else if (pop1 == pop2) {
-                printf("EMPATE! %s e %s tem a população igual: %d", cidade2, cidade1, pop1);                
+                printf("EMPATE! %s e %s tem a população igual: %d\n", cidade2, cidade1, pop1);                
             }
             break;
         case 2:
+            soma1 = area1;
+            soma2 = area2;
             if (area1 > area2) {
-                printf("%s tem a área maior: %.2f x %.2f", cidade1, area1, area2);
+                printf("%s tem a área maior: %.2f x %.2f\n", cidade1, area1, area2);
             } else if (area1 < area2) {
-                printf("%s tem a área maior: %.2f x %.2f", cidade2, area2, area1);
+                printf("%s tem a área maior: %.2f x %.2f\n", cidade2, area2, area1);
             } else if (area1 == area2) {
-                printf("EMPATE! %s e %s tem a área igual: %.2f", cidade2, cidade1, area1);
+                printf("EMPATE! %s e %s tem a área igual: %.2f\n", cidade2, cidade1, area1);
             }
             break;
         case 3:
+            soma1 = pib1;
+            soma2 = pib2;
             if (pib1 > pib2) {
-                printf("%s tem o PIB maior: %.2f x %.2f", cidade1, pib1, pib2);
+                printf("%s tem o PIB maior: %.2f x %.2f\n", cidade1, pib1, pib2);
             } else if (pib1 < pib2) {
-                printf("%s tem o PIB maior: %.2f x %.2f", cidade2, pib2, pib1);
+                printf("%s tem o PIB maior: %.2f x %.2f\n", cidade2, pib2, pib1);
             } else if (pib1 == pib2) {
-                printf("EMPATE! %s e %s tem o PIB igual: %.2f", cidade2, cidade1, pib1);
+                printf("EMPATE! %s e %s tem o PIB igual: %.2f\n", cidade2, cidade1, pib1);
             }
             break;
         case 4:
+            soma1 = pontosTur1;
+            soma2 = pontosTur2;
             if (pontosTur1 > pontosTur2) {
-                printf("%s tem mais pontos turísticos: %i x %i", cidade1, pontosTur1, pontosTur2);
+                printf("%s tem mais pontos turísticos: %i x %i\n", cidade1, pontosTur1, pontosTur2);
             } else if (pontosTur1 < pontosTur2) {
-                printf("%s tem mais pontos turísticos: %i x %i", cidade2, pontosTur2, pontosTur1);
+                printf("%s tem mais pontos turísticos: %i x %i\n", cidade2, pontosTur2, pontosTur1);
             } else if (pontosTur1 == pontosTur2) {
-                printf("EMPATE! %s e %s tem a mesma quantidade de pontos turísticos: %.2f", cidade2, cidade1, pontosTur1);
+                printf("EMPATE! %s e %s tem a mesma quantidade de pontos turísticos: %.2f\n", cidade2, cidade1, pontosTur1);
             }
             break;
         case 5:
+            soma1 = densidade1;
+            soma2 = densidade2;
             if (densidade1 < densidade2) {
-                printf("%s tem a densidade demográfica menor: %.2f x %.2f", cidade1, densidade1, densidade2);
+                printf("%s tem a densidade demográfica menor: %.2f x %.2f\n", cidade1, densidade1, densidade2);
             } else if (densidade1 > densidade2) {
-                printf("%s tem a densidade demográfica menor: %.2f x %.2f", cidade2, densidade2, densidade1);
+                printf("%s tem a densidade demográfica menor: %.2f x %.2f\n", cidade2, densidade2, densidade1);
             } else if (densidade1 == densidade2) {
-                printf("EMPATE! %s e %s tem a densidade demográfica igual: %.2f", cidade2, cidade1, densidade1);
+                printf("EMPATE! %s e %s tem a densidade demográfica igual: %.2f\n", cidade2, cidade1, densidade1);
+            }
+            break;
+        default:
+            printf("Opção inválida\n");
+            return 0;
+            break;
+    }
+
+    printf("--------------------------------------------\n");
+    printf("Escolha o segundo item para comparação: ");
+    scanf("%d", &itemComparado2);
+    
+    if (itemComparado1 == itemComparado2) {
+        printf("Nâo pode comparar o mesmo item 2 vezes!");
+        printf("--------------------------------------------\n");
+        return 0;
+    }
+    
+    switch (itemComparado2) {
+        case 1:
+        if (pop1 > pop2) {
+            soma1 += pop1;
+            soma2 += pop2;
+            printf("%s tem a população maior: %d x %d\n", cidade1, pop1, pop2);
+            } else if (pop1 < pop2) {
+                printf("%s tem a população maior: %d x %d\n", cidade2, pop2, pop1);
+            } else if (pop1 == pop2) {
+                printf("EMPATE! %s e %s tem a população igual: %d\n", cidade2, cidade1, pop1);                
+            }
+            break;
+        case 2:
+            soma1 += area1;
+            soma2 += area2;
+            if (area1 > area2) {
+                printf("%s tem a área maior: %.2f x %.2f\n", cidade1, area1, area2);
+            } else if (area1 < area2) {
+                printf("%s tem a área maior: %.2f x %.2f\n", cidade2, area2, area1);
+            } else if (area1 == area2) {
+                printf("EMPATE! %s e %s tem a área igual: %.2f\n", cidade2, cidade1, area1);
+            }
+            break;
+        case 3:
+            soma1 += pib1;
+            soma2 += pib2;
+            if (pib1 > pib2) {
+                printf("%s tem o PIB maior: %.2f x %.2f\n", cidade1, pib1, pib2);
+            } else if (pib1 < pib2) {
+                printf("%s tem o PIB maior: %.2f x %.2f\n", cidade2, pib2, pib1);
+            } else if (pib1 == pib2) {
+                printf("EMPATE! %s e %s tem o PIB igual: %.2f\n", cidade2, cidade1, pib1);
+            }
+            break;
+        case 4:
+            soma1 += pontosTur1;
+            soma2 += pontosTur2;
+            if (pontosTur1 > pontosTur2) {
+                printf("%s tem mais pontos turísticos: %i x %i\n", cidade1, pontosTur1, pontosTur2);
+            } else if (pontosTur1 < pontosTur2) {
+                printf("%s tem mais pontos turísticos: %i x %i\n", cidade2, pontosTur2, pontosTur1);
+            } else if (pontosTur1 == pontosTur2) {
+                printf("EMPATE! %s e %s tem a mesma quantidade de pontos turísticos: %.2f\n", cidade2, cidade1, pontosTur1);
+            }
+            break;
+        case 5:
+            soma1 += densidade1;
+            soma2 += densidade2;
+            if (densidade1 < densidade2) {
+                printf("%s tem a densidade demográfica menor: %.2f x %.2f\n", cidade1, densidade1, densidade2);
+            } else if (densidade1 > densidade2) {
+                printf("%s tem a densidade demográfica menor: %.2f x %.2f\n", cidade2, densidade2, densidade1);
+            } else if (densidade1 == densidade2) {
+                printf("EMPATE! %s e %s tem a densidade demográfica igual: %.2f\n", cidade2, cidade1, densidade1);
             }
             break;
         default:
             printf("Opção inválida\n");
             break;
     }
+
+    printf("--------------------------------------------\n");
+
+    printf("Soma dos items escolhidos\n");
+    printf("%s: %.2f\n%s: %.2f\n", cidade1, soma1, cidade2, soma2);
+    
+    if (soma1 == soma2) {
+        printf("SOMAS DOS ITENS EMPATADA\n");
+    } else {    
+        soma1 > soma2 ? printf("%s ganhou!\n", cidade1) : printf("%s ganhou!\n",cidade2);
+    }
+
+    printf("--------------------------------------------\n");
 
     return 0;
 
